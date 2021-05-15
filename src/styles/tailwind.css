@@ -701,6 +701,26 @@
   .bg-white {
     background-color: #fff;
   }
+
+  .bg-offwhite {
+    background-color: #FBF6F3;
+  }
+
+  .bg-turquoise {
+    background-color: #36D6E7;
+  }
+
+  .bg-tangerine {
+    background-color: #FEB06A;
+  }
+
+  .bg-gray {
+    background-color: #404a5e;
+  }
+  
+  .bg-darkgray {
+    background-color: #5D6C89;
+  }
   
   .bg-gray-100 {
     background-color: #f7fafc;
@@ -1070,6 +1090,26 @@
     background-color: #000;
   }
   
+  .hover\:bg-offwhite:hover {
+    background-color: #FBF6F3;
+  }
+
+  .hover\:bg-turquoise:hover {
+    background-color: #36D6E7;
+  }
+
+  .hover\:bg-tangerine:hover {
+    background-color: #FEB06A;
+  }
+
+  .hover\:bg-gray:hover {
+    background-color: #404a5e;
+  }
+  
+  .hover\:bg-darkgray:hover {
+    background-color: #5D6C89;
+  }
+
   .hover\:bg-white:hover {
     background-color: #fff;
   }
