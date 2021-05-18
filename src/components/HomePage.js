@@ -1,41 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import logo from '../img/PLACEHOLDER-linegraph.PNG';
 import foodBackground from '../img/berry-background.jpg';
 import Result from './Result';
+const axios = require('axios');
+const APP_ID = '7b632c32';
+const APP_KEY = '005154710d7c48250feb6e1dbd9bd7d6';
 
 function HomePage() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [string, setString] = useState('');
+
+const bSearch1 = '';
+const bSearch2 = '';
+const lSearch1 = '';
+const lSearch2 = '';
+const dSearch1 = '';
+const dSearch2 = '';
+
+
+  const breakfast1 = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${bSearch1}`;
+  const breakfast2 = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${bSearch2}`;
+  const lunch1 = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${lSearch1}`;
+  const lunch2 = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${lSearch2}`;
+  const dinner1 = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${dSearch1}`;
+  const dinner2 = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${dSearch2}`;
+
+  const break1 = axios.get(breakfast1);
+  const break2 = axios.get(breakfast2);
+  const lun1 = axios.get(lunch1);
+  const lun2 = axios.get(lunch2);
+  const din1 = axios.get(dinner1);
+  const din2 = axios.get(dinner2);
+
+  const foodData = () => {
+    axios.all([break1, break2, lun1, lun2, din1, din2]).then(
+      axios.spread((...responses) => {
+        const resOne = responses[0];
+        const resTwo = responses[1];
+        const resThree = responses[2];
+        const resFour = responses[3];
+        const resFive = responses[4];
+        const resSix = responses[5];
+        console.log(resOne, resTwo, resThree, resFour, resFive, resSix)
+      })
+    ).catch(err => {
+      console.log(err)
+    })
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setSearchTerm(string);
+    foodData();
   };
-
-  useEffect(() => {
-    const getNutrients = () => {
-      // MOVE KEY INTO ENV
-      const APP_ID = '7b632c32';
-      const APP_KEY = '005154710d7c48250feb6e1dbd9bd7d6';
-      //fetch
-      const result = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: 'Example Title',
-          ingr: { searchTerm },
-        }),
-      };
-      fetch(
-        `https://api.edamam.com/api/nutrition-details?app_id=${APP_ID}&app_key=${APP_KEY}`,
-        result
-      )
-        .then((response) => response.json())
-        .then(console.log(result));
-    };
-    getNutrients();
-    console.log(searchTerm);
-  }, [searchTerm]);
 
   return (
     <div
@@ -49,14 +63,14 @@ function HomePage() {
     >
       <section className="w-full flex justify-center items-center">
         <div className="m-10">
-          <form onSubmit={(e) => onSubmit(e)}>
+          <form>
             <div className="px-4">
               <button
                 className="bg-offwhite hover:bg-turquoise text-darkgray text-2xl font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline"
                 type="submit"
-                onClick={(e) => onSubmit(e)}
+                onClick={onSubmit}
               >
-                Log Food <i class="fas fa-plus-circle"></i>
+                Log Food <i className="fas fa-plus-circle"></i>
               </button>
             </div>
             <h3 className="mt-2 bg-tangerine text-2xl">
@@ -67,8 +81,10 @@ function HomePage() {
               <ul className="bg-gray p-3">
                 <li>
                   <textarea
-                    onChange={(event) => setString(event.target.value)}
-                    value={string}
+                    // onChange={(event) =>
+                    //   setBreakfastSearch1(event.target.value)
+                    // }
+                    value={bSearch1}
                     cols="70"
                     rows="1"
                     className="border p-3 bg-offwhite"
@@ -77,8 +93,10 @@ function HomePage() {
                 </li>
                 <li>
                   <textarea
-                    onChange={(event) => setString(event.target.value)}
-                    value={string}
+                    // onChange={(event) =>
+                    //   setBreakfastSearch2(event.target.value)
+                    // }
+                    value={bSearch2}
                     cols="70"
                     rows="1"
                     className="border p-3 bg-offwhite"
@@ -90,8 +108,8 @@ function HomePage() {
               <ul className="bg-gray p-3">
                 <li>
                   <textarea
-                    onChange={(event) => setString(event.target.value)}
-                    value={string}
+                    // onChange={(event) => setLunchSearch1(event.target.value)}
+                    value={lSearch1}
                     cols="70"
                     rows="1"
                     className="border p-3 bg-offwhite"
@@ -100,8 +118,8 @@ function HomePage() {
                 </li>
                 <li>
                   <textarea
-                    onChange={(event) => setString(event.target.value)}
-                    value={string}
+                    // onChange={(event) => setLunchSearch2(event.target.value)}
+                    value={lSearch2}
                     cols="70"
                     rows="1"
                     className="border p-3 bg-offwhite"
@@ -113,8 +131,8 @@ function HomePage() {
               <ul className="bg-gray p-3">
                 <li>
                   <textarea
-                    onChange={(event) => setString(event.target.value)}
-                    value={string}
+                    // onChange={(event) => setDinnerSearch1(event.target.value)}
+                    value={dSearch1}
                     cols="70"
                     rows="1"
                     className="border p-3 bg-offwhite"
@@ -123,8 +141,8 @@ function HomePage() {
                 </li>
                 <li>
                   <textarea
-                    onChange={(event) => setString(event.target.value)}
-                    value={string}
+                    // onChange={(event) => setDinnerSearch2(event.target.value)}
+                    value={dSearch2}
                     cols="70"
                     rows="1"
                     className="border p-3 bg-offwhite"
@@ -143,6 +161,7 @@ function HomePage() {
           </form>
         </div>
       </section>
+      {/* <Result results ={this.state.res}/> */}
     </div>
   );
 }
