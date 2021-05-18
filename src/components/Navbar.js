@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/benefit-darkgray.png"
+import logo from "../images/benefit-darkgray.png"
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
@@ -14,7 +14,7 @@ function Navbar() {
             <li className="pr-5 text-2xl text-darkgray">
               <Link
                 to="/login"
-                className={location.pathname === "/login"}
+                className={location.pathname === "/login" ? 1 : 0}
               >
                 Login
             </Link>
@@ -22,7 +22,7 @@ function Navbar() {
             <li className="pr-5 text-2xl text-darkgray">
               <Link
                 to="/logfood"
-                className={location.pathname === "/logfood"}
+                className={location.pathname === "/logfood" ? 1 : 0}
               >
                 Log Food
             </Link>
