@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../img/PLACEHOLDER-linegraph.PNG';
-import foodBackground from '../img/berry-background.jpg';
+import logo from '../images/PLACEHOLDER-linegraph.PNG';
+import foodBackground from '../images/berry-background.jpg';
 import Result from './Result';
 
 function HomePage() {
@@ -56,7 +56,7 @@ function HomePage() {
                 type="submit"
                 onClick={(e) => onSubmit(e)}
               >
-                Log Food <i class="fas fa-plus-circle"></i>
+                Log Food <i className="fas fa-plus-circle"></i>
               </button>
             </div>
             <h3 className="mt-2 bg-tangerine text-2xl">
