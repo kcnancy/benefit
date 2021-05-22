@@ -14,10 +14,14 @@ var FoodSchema = new Schema({
     type: String,
     required: true
   },
-  sodium: {
+  fat: {
     type: String,
     required: true
-  }
+  },
+  calories: {
+    type: String,
+    required: true
+  },
 });
 
 module.exports = mongoose.model('Food', FoodSchema);
