@@ -8,6 +8,8 @@ const Schema = mongoose.Schema;
 const User = new Schema({
     _id: { type: String, auto: true},
     email: {type: String, required: true, unique: true},
+
+    
 });
 // Export Model
 User.plugin(passportLocalMongoose);
