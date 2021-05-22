@@ -1,7 +1,7 @@
 // dependencies
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
-var bcrypt = require("bcrypt-nodejs");
+var bcrypt = require("bcryptjs");
 // Create Model
 const Schema = mongoose.Schema;
 
