@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import logo from '../images/PLACEHOLDER-linegraph.PNG';
 import foodBackground from '../images/berry-background.jpg';
 import Result from './Result';
+import Chart from './Chart';
 const axios = require('axios');
 const APP_ID = '7b632c32';
 const APP_KEY = '005154710d7c48250feb6e1dbd9bd7d6';
@@ -73,7 +73,7 @@ function HomePage() {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        height: '60rem',
+        height: '80rem',
       }}
     >
       <section className="w-full flex justify-center items-center">
@@ -170,9 +170,12 @@ function HomePage() {
             <Result />
             <div className="m-2">
               <h3 className="mt-2 bg-tangerine text-2xl">
-                Placeholder Calorie Chart
+                Calorie Consumption
               </h3>
-              <img src={logo} alt="placeholder for real graph" />
+              <div className="bg-tangerine">
+                <Chart />
+              </div>
+
             </div>
           </form>
         </div>
