@@ -52,8 +52,8 @@ function HomePage() {
                 Log Food <i className="fas fa-plus-circle"></i>
               </button>
             </div>
-            <h3 className="mt-2 bg-tangerine text-2xl">
-              Placeholder Day Entry
+            <h3 className="mt-2 bg-tangerine text-2xl text-center">
+              Today's Food Log
             </h3>
             <div className="rounded border">
               <h2 className="bg-turquoise p-2">Meal</h2>
@@ -71,8 +71,8 @@ function HomePage() {
               </ul>
             </div>
             <div className="m-2">
-              <h3 className="mt-2 bg-tangerine text-2xl">
-                Calorie Consumption
+              <h3 className="mt-2 bg-tangerine text-2xl text-center">
+                This Week's Calorie Consumption
               </h3>
               <div className="bg-tangerine">
                 <Chart />

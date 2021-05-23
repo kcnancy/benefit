@@ -4,6 +4,7 @@ import Nav from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import Login from "./components/LoginForm";
 import LogFood from "./components/FoodForm";
+import SignUp from "./components/SignUpForm";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/signin" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
         <Route exact path="/logfood" component={LogFood} />
       </Switch>
     </div>
