@@ -13,8 +13,8 @@ function Navbar() {
           <ul className="flex flex-row">
             <li className="pr-5 text-2xl text-darkgray">
               <Link
-                to="/login"
-                className={location.pathname === "/login" ? 1 : 0}
+                to="/signin"
+                className={location.pathname === "/signin" ? 1 : 0}
               >
                 Login
             </Link>
