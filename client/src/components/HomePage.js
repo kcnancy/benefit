@@ -38,7 +38,7 @@ const HomePage = ({foodData, searchState, setSearchState }) => {
                 Today's Food Log
               </h3>
               <div className="m-2 rounded border-2">
-                <h2 className="bg-turquoise p-2">Meal</h2>
+                {/* <h2 className="bg-turquoise p-2">Meal</h2> */}
                 <ul>
                   <li className="bg-offwhite">
                     <textarea
