@@ -31,7 +31,7 @@ app.use(cors());
 
 // uncomment after placing your favicon in /public
 // eslint-disable-next-line no-undef
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -50,11 +50,11 @@ app.get('/', function(req, res) {
 
 // Calling routes
 let authentication = require('./routes/auth');
-let food = require('./routes/food');
+//let food = require('./routes/food');
 
 // Using routes
 app.use('/api', authentication);
-app.use('/api', passport.authenticate('jwt', { session: false}), food);
+//app.use('/api', passport.authenticate('jwt', { session: false}), food);
 
 /**
  * End Server Routes
@@ -78,7 +78,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+// module.exports = app;
 
 // app.use(
 //   session({
@@ -101,7 +101,7 @@ module.exports = app;
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-// const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // passport.serializeUser(User.serializeUser());
 // passport.deserializeUser(User.deserializeUser());
@@ -116,6 +116,6 @@ module.exports = app;
 //   useNewUrlParser: true,
 // });
 
-// app.listen(PORT, () => {
-//   console.log(`🌎 ==> API server now on port ${PORT}!`);
-// });
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});

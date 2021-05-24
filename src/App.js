@@ -4,7 +4,7 @@ import Nav from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import Login from "./components/LoginForm";
 import LogFood from "./components/FoodForm";
-import SignUp from "./components/SignupForm";
+import SignUp from "./components/SignUpForm";
 
 function App() {
   return (
