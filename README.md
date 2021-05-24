@@ -38,16 +38,16 @@ fork application from github and run npm install for required packages.
 ```sh
 npm start
 ```
-![Landing_Page](public/home.png)
+![Landing_Page](/client/public/home.png)
 Landing page
 
-![SignUp_Page](public/signup.png)
+![SignUp_Page](/client/public/signup.png)
 Sign Up page
 
-![Login_Page](public/login.png)
+![Login_Page](/client/public/login.png)
 Login page
 
-![Foodlog_Page](public/foodlog.png)
+![Foodlog_Page](/client/public/foodlog.png)
 Food log page
 
 ## Author
