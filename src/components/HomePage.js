@@ -32,15 +32,15 @@ function HomePage() {
 
   return (
     <div
-      style={{
+    className="h-full"  
+    style={{
         backgroundImage: `url(${foodBackground})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        height: '80rem',
       }}
     >
-      <section className="w-full flex justify-center items-center">
+      <section className="h-screen w-full flex justify-center">
         <div className="m-10">
           <form>
             <div className="px-4">
@@ -52,29 +52,33 @@ function HomePage() {
                 Log Food <i className="fas fa-plus-circle"></i>
               </button>
             </div>
-            <h3 className="mt-2 bg-tangerine text-2xl text-center">
-              Today's Food Log
-            </h3>
-            <div className="rounded border">
-              <h2 className="bg-turquoise p-2">Meal</h2>
-              <ul className="bg-gray p-3">
-                <li>
-                  <textarea
-                    onChange={(event) => setSearchState(event.target.value)}
-                    value={searchState}
-                    cols="70"
-                    rows="1"
-                    className="border p-3 bg-offwhite"
-                    placeholder="1 Egg"
-                  ></textarea>
-                </li>
-              </ul>
-            </div>
-            <div className="m-2">
-              <h3 className="mt-2 bg-tangerine text-2xl text-center">
-                This Week's Calorie Consumption
+
+            <div className="m-2 rounded p-2 bg-tangerine">
+              <h3 className="bg-tangerine text-2xl text-center">
+                Today's Food Log
               </h3>
-              <div className="bg-tangerine">
+              <div className="m-2 rounded border-2">
+                <h2 className="bg-turquoise p-2">Meal</h2>
+                <ul>
+                  <li className="bg-offwhite">
+                    <textarea
+                      onChange={(event) => setSearchState(event.target.value)}
+                      value={searchState}
+                      cols="70"
+                      rows="1"
+                      className="p-3 bg-offwhite"
+                      placeholder="1 Egg"
+                    ></textarea>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="p-2 m-2 rounded bg-tangerine">
+            <h3 className="text-2xl text-center rounded-lg">
+                  This Week's Calorie Consumption
+                </h3>
+              <div className="bg-offwhite rounded m-2">
                 <Chart />
               </div>
 
