@@ -69,6 +69,7 @@ function SignUp() {
       </div>
     </section>
   );
+
 }
 
-export default SignUp;
+export default SignUpForm;

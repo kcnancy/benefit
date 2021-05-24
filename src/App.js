@@ -7,6 +7,7 @@ import LogFood from "./components/FoodForm";
 import SignUp from "./components/SignUpForm";
 
 function App() {
+
   return (
     <Router>
     <div>
@@ -21,5 +22,5 @@ function App() {
   </Router>
   );
 }
-
 export default App;
+// export default App;
