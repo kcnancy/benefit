@@ -3,7 +3,7 @@ import logo from "../images/benefit-halfmoon.png"
 
 function Login() {
     return (
-        <section className="w-full flex justify-center items-center bg-darkgray">
+        <section className="w-full flex justify-center bg-darkgray h-screen">
             <div className="w-full max-w-md m-20" >
                 <form action="" className="bg-offwhite shadow-md rounded px-8 py-8 pt-8">
                     <div className="flex justify-center">

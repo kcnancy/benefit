@@ -4,14 +4,14 @@ import foodBackground from "../images/yogurt-background.jpg";
 function FoodForm() {
     return (
         <div
-            style={{
+        className="h-full"     
+        style={{
                 backgroundImage: `url(${foodBackground})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-                height: "60rem",
             }}>
-            <section className=" w-full flex justify-center items-center">
+            <section className="h-screen w-full flex justify-center">
                 <div className="w-full max-w-md m-20">
                     <form action="" className="bg-tangerine rounded-lg px-8 py-8 pt-8">
                         <h2 className="text-center text-4xl">Log Food</h2>
