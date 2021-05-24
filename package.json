@@ -1,12 +1,9 @@
 {
-  "name": "project3",
-  "version": "0.1.0",
-  "private": true,
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Welcome to:  benefit Find what fuels you 👋</h1>\r <p>",
+  "main": "server.js",
   "dependencies": {
-    "@craco/craco": "^6.1.2",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
@@ -19,47 +16,33 @@
     "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.9",
+    "session": "^0.1.0",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local-mongoose": "^6.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "session": "^0.1.0",
-    "victory": "^35.8.0",
-    "web-vitals": "^1.1.1"
-  },
-  "scripts": {
-    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "passport-local-mongoose": "^6.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.2",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
-  }
+    "concurrently": "^6.2.0",
+    "if-env": "^1.0.4"
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcnancy/project3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kcnancy/project3/issues"
+  },
+  "homepage": "https://github.com/kcnancy/project3#readme"
 }

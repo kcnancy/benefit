@@ -4,8 +4,7 @@ import foodBackground from '../images/yogurt-background.jpg';
 
 
 
-function FoodForm() {
-  const [searchState, setSearchState] = useState('');
+function FoodForm({getFoodData, searchState, setSearchState}) {
 
 
 
@@ -58,7 +57,7 @@ function FoodForm() {
               />
             </div>
             <div className="px-4">
-              <OnSubmitButton />
+              <OnSubmitButton getFoodData={getFoodData} />
             </div>
           </form>
         </div>

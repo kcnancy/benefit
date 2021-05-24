@@ -3,24 +3,9 @@ import foodBackground from '../images/berry-background.jpg';
 import Chart from './Chart';
 import { Link, useLocation } from 'react-router-dom';
 
-const HomePage = () => {
-  const axios = require('axios');
-  const APP_ID = '7b632c32';
-  const APP_KEY = '005154710d7c48250feb6e1dbd9bd7d6';
+const HomePage = ({foodData, searchState, setSearchState }) => {
 
   const location = useLocation();
-  const [searchState, setSearchState] = useState('');
-  const [foodData, setFoodData] = useState();
-  console.log(searchState);
-  const apiGetLink = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${searchState}`;
-
-  axios
-    .get(apiGetLink)
-    .then((response) => {
-      console.log(response);
-      setFoodData(response.data);
-    })
-    .catch((err) => console.error(err));
 
   return (
     <div
