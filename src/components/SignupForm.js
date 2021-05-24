@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../images/benefit-halfmoon.png";
 import axios from "axios";
-function SignUp() {
+function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   function handleSignup() {
@@ -72,4 +72,4 @@ function SignUp() {
 
 }
 
-export default SignUpForm;
+export default Signup;

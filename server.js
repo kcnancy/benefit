@@ -44,17 +44,24 @@ app.use(passport.initialize());
  * Server Routes
  */
 
-app.get('/', function(req, res) {
-    res.send('Page under construction.');
-});
 
 // Calling routes
 let authentication = require('./routes/auth');
+let api = require('./routes/api');
+
 //let food = require('./routes/food');
 
 // Using routes
 app.use('/api', authentication);
+app.use('/api', api);
+
 //app.use('/api', passport.authenticate('jwt', { session: false}), food);
+
+
+
+app.get('/', function(req, res) {
+    res.send('Page under construction.');
+});
 
 /**
  * End Server Routes
