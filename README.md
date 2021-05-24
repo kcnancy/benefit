@@ -25,7 +25,7 @@
 
 ### 🏠 [Homepage](https://github.com/kcnancy/benefit)
 
-### ✨ [Demo](https://github.com/kcnancy/project3)
+### ✨ [Demo](https://warm-badlands-80475.herokuapp.com/)
 
 ## Install
 
