@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
+import OnSubmitButton from './OnSubmitButton'
 import foodBackground from '../images/yogurt-background.jpg';
-import Result from './Result'
-import handleFoodData from './Result';
-
 
 
 
 function FoodForm() {
-      const [searchState, setSearchState] = useState('');
+  const [searchState, setSearchState] = useState('');
 
-    
-    // When food item is submited this function will run
-    const onSubmit = (event) => {
-        event.preventDefault();
-        handleFoodData();
-        console.log(handleFoodData)
-    };
 
 
   return (
@@ -67,13 +58,7 @@ function FoodForm() {
               />
             </div>
             <div className="px-4">
-              <button
-                className="bg-turquoise hover:bg-offwhite font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline"
-                type="button"
-                onClick={onSubmit}
-              >
-                Save Food
-              </button>
+              <OnSubmitButton />
             </div>
           </form>
         </div>

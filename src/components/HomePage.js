@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import foodBackground from '../images/berry-background.jpg';
 import Chart from './Chart';
+import { Link, useLocation } from 'react-router-dom';
 
-function HomePage(props) {
-  console.log(props.foodData.calories);
+const HomePage = () => {
+  const axios = require('axios');
+  const APP_ID = '7b632c32';
+  const APP_KEY = '005154710d7c48250feb6e1dbd9bd7d6';
 
-  //Total Calories
-  const totalCalories = props.foodData.calories;
+  const location = useLocation();
+  const [searchState, setSearchState] = useState('');
+  const [foodData, setFoodData] = useState();
+  console.log(searchState);
+  const apiGetLink = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${searchState}`;
 
-  // Total Carbs
-  const totalCarbs = props.foodData.totalNutrients.CHOCDF;
-  const tCarbs = totalCarbs.quantity.toFixed(2);
-
-  //Total Protein
-  const totalProtein = props.foodData.totalNutrients.PROCNT;
-  const tProtein = totalProtein.quantity.toFixed(2);
-
-
-
+  axios
+    .get(apiGetLink)
+    .then((response) => {
+      console.log(response);
+      setFoodData(response.data);
+    })
+    .catch((err) => console.error(err));
 
   return (
     <div
@@ -37,7 +40,12 @@ function HomePage(props) {
                 className="bg-offwhite hover:bg-turquoise text-darkgray text-2xl font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Log Food <i className="fas fa-plus-circle"></i>
+                <Link
+                  to="/logfood"
+                  className={location.pathname === '/logfood' ? 1 : 0}
+                >
+                  Log Food <i className="fas fa-plus-circle"></i>
+                </Link>
               </button>
             </div>
             <h3 className="mt-2 bg-tangerine text-2xl">
@@ -61,21 +69,14 @@ function HomePage(props) {
                 Calorie Consumption
               </h3>
               <div className="bg-tangerine">
-                <Chart />
+                {foodData && <Chart foodData={foodData} />}
               </div>
             </div>
           </form>
         </div>
       </section>
-      <p>Calories: {totalCalories}</p>
-      <p>
-        {totalCarbs.label}: {tCarbs + totalCarbs.unit}
-      </p>
-      <p>
-        {totalProtein.label}: {tProtein + totalProtein.unit}
-      </p>
     </div>
   );
-}
+};
 
 export default HomePage;
