@@ -122,9 +122,10 @@ router.get(
 );
 
 router.post('/food',
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   function (req, res) {
-    var token = getToken(req.headers);
+    var token = true;
+    // var token = getToken(req.headers);
     if (token) {
       // eslint-disable-next-line array-callback-return
       Food.create(req.body)

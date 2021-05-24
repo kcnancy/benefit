@@ -11,5 +11,5 @@ router.post("/signup", authenticationController.signup);
 
 //SignIn
 router.post("/signin", authenticationController.signin);
-router.post('/food', foodController.newFood);
+// router.post('/food', foodController.newFood);
 module.exports = router;
