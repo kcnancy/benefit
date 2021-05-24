@@ -1,10 +1,8 @@
-/* eslint-disable import/no-anonymous-default-export */
+function Result(props) {
+  console.log(props.foodData);
 
-export default function Result(props) {
-  console.log(props.foodData.calories);
-
-  //Total Calories
-  const totalCalories = props.foodData.calories
+  //   Total Calories
+  const totalCalories = props.foodData.calories;
 
   // Total Carbs
   const totalCarbs = props.foodData.totalNutrients.CHOCDF;
@@ -14,14 +12,16 @@ export default function Result(props) {
   const totalProtein = props.foodData.totalNutrients.PROCNT;
   const tProtein = totalProtein.quantity.toFixed(2);
 
-
-
-
-      return(
-      <div>
-        <p>Calories: {totalCalories}</p>
-        <p>{totalCarbs.label}: {tCarbs + totalCarbs.unit}</p>
-        <p>{totalProtein.label}: {tProtein + totalProtein.unit}</p>
-      </div>
-      );
+  return (
+    <div>
+      <p>Calories: {totalCalories}</p>
+      <p>
+        {totalCarbs.label}: {tCarbs + totalCarbs.unit}
+      </p>
+      <p>
+        {totalProtein.label}: {tProtein + totalProtein.unit}
+      </p>
+    </div>
+  );
 }
+export default Result;

@@ -6,7 +6,6 @@ var bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-
   _id: { type: String, auto: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
@@ -29,7 +28,6 @@ User.pre("save", function (next) {
   } else {
     return next();
   }
-
 });
 
 User.methods.comparePassword = function (passw, cb) {

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/benefit-halfmoon.png"
 
-function SignUp() {
+function SignUpForm() {
     return (
         <section className="w-full flex justify-center items-center bg-darkgray">
             <div className="w-full max-w-md m-20" >
@@ -28,4 +28,4 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+export default SignUpForm;
