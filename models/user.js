@@ -41,6 +41,7 @@ User.methods.comparePassword = function (passw, cb) {
   });
 };
 
+console.log (User)
 // Export Model
 User.plugin(passportLocalMongoose);
 
