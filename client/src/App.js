@@ -28,9 +28,10 @@ function App() {
           fiber: response.data.totalNutrients.FIBTG.quantity,
           fat: response.data.totalNutrients.FAT.quantity,
         };
-        axios.post('/api/food', food)
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+        axios
+          .post('/api/food', food)
+          .then((data) => console.log(data))
+          .catch((err) => console.log(err));
       })
       .catch((err) => console.error(err));
   }

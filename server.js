@@ -16,10 +16,11 @@ const morgan = require("morgan");
 const config = require("./config/database");
 
 require("./config/passport")(passport);
-mongoose.connect(process.env.MONGODB_URI || config.database, {
-  useCreateIndex: true,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/benefitdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 
