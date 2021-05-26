@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
