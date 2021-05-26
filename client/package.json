@@ -1,8 +1,8 @@
 {
-  "name": "project3",
+  "name": "benefit",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://benefit-project.herokuapp.com/",
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.12.0",
