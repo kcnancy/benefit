@@ -17,8 +17,8 @@
   },
   "scripts": {
     "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start": "npm start",
-    "build": "npm build",
+    "start": "react start",
+    "build": "heroku build",
     "test": "react test",
     "eject": "react-scripts eject"
   },
