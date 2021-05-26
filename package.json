@@ -40,12 +40,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kcnancy/project3.git"
+    "url": "git+https://github.com/kcnancy/benefit.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kcnancy/project3/issues"
+    "url": "https://github.com/kcnancy/benefit/issues"
   },
-  "homepage": "https://github.com/kcnancy/project3#readme"
+  "homepage": "https://github.com/kcnancy/benefit#readme"
 }
