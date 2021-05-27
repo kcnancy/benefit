@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import OnSubmitButton from './OnSubmitButton'
 import foodBackground from '../images/yogurt-background.jpg';
 

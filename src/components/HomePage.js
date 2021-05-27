@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import foodBackground from '../images/berry-background.jpg';
 import Chart from './Chart';
 import { Link, useLocation } from 'react-router-dom';
