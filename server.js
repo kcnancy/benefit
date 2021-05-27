@@ -16,7 +16,7 @@ const morgan = require("morgan");
 const config = require("./config/database");
 
 require("./config/passport")(passport);
-mongoose.connect(config.database, {
+mongoose.connect(process.env.MONGODB_URI || config.database, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -36,25 +36,35 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 app.use(passport.initialize());
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 /**
  * Server Routes
  */
 
-app.get('/', function(req, res) {
-    res.send('Page under construction.');
-});
 
 // Calling routes
 let authentication = require('./routes/auth');
+let api = require('./routes/api');
+
 //let food = require('./routes/food');
 
 // Using routes
 app.use('/api', authentication);
+app.use('/api', api);
+
 //app.use('/api', passport.authenticate('jwt', { session: false}), food);
+
+
+
+app.get('/', function(req, res) {
+    res.send('Page under construction.');
+});
 
 /**
  * End Server Routes
@@ -106,15 +116,15 @@ const PORT = process.env.PORT || 3001;
 // passport.serializeUser(User.serializeUser());
 // passport.deserializeUser(User.deserializeUser());
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
 
 // // app.use(routes);
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/benefitDB", {
 //   useNewUrlParser: true,
 // });
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

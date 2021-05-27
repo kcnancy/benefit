@@ -4,8 +4,8 @@ import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 function Chart(props) {
   console.log(props.foodData);
 
-  //   Total Calories
-  // const totalCalories = props.foodData.calories;
+    // Total Calories
+  const totalCalories = props.foodData.calories;
 
   // Total Carbs
   // const totalCarbs = props.foodData.totalNutrients.CHOCDF;
@@ -17,12 +17,12 @@ function Chart(props) {
 
 
   const data = [
-    { date: '5/19', calories: 2100 },
-    { date: '5/20', calories: 1960 },
-    { date: '5/21', calories: 2300 },
-    { date: '5/22', calories: 2130 },
-    { date: '5/23', calories: 2130 },
-    { date: '5/24', calories: 2130 }
+    // props.foodData.calories
+    { date: '5/20', calories: 2200 },
+    { date: '5/21', calories: 2100 },
+    { date: '5/22', calories: 1980 },
+    { date: '5/23', calories: 2000 },
+    { date: '5/24', calories: totalCalories }
   ];
 
   return (

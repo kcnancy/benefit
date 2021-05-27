@@ -121,6 +121,23 @@ router.get(
   }
 );
 
+router.post('/food',
+  // passport.authenticate("jwt", { session: false }),
+  function (req, res) {
+    var token = true;
+    // var token = getToken(req.headers);
+    if (token) {
+      // eslint-disable-next-line array-callback-return
+      Food.create(req.body)
+      .then(data => res.json(data))
+      .catch(err => res.json(err))
+    } else {
+      return res.status(403).send({ success: false, msg: "Unauthorized." });
+    }
+  }
+
+)
+
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(" ");
