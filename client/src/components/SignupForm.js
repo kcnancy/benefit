@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import logo from "../images/benefit-halfmoon.png";
 import axios from "axios";
 function Signup() {
@@ -13,7 +13,7 @@ function Signup() {
     axios.post("/api/signup", obj).then(res => {
         console.log (res)
     }).catch (error => console.log(error))
-    
+
   }
   return (
     <section className="w-full flex justify-center items-center bg-darkgray">
@@ -69,7 +69,5 @@ function Signup() {
       </div>
     </section>
   );
-
-}
-
+  }
 export default Signup;
